@@ -56,5 +56,9 @@ message.innerHTML =
   'We used cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
 
 header.append(message);
-header.before(message);
-header.after(message);
+// header.before(message);
+// header.after(message);
+
+//Delete elements
+document.querySelector('.btn--close-cookie');
+addEventListener('click', () => message.remove());
