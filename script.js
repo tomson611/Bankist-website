@@ -62,3 +62,17 @@ header.append(message);
 //Delete elements
 document.querySelector('.btn--close-cookie');
 addEventListener('click', () => message.remove());
+
+//Styles
+
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.backgroundColor);
+
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
