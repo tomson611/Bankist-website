@@ -87,3 +87,10 @@ console.log(logo.src);
 console.log(logo.className);
 logo.alt = 'minimalist logo';
 logo.setAttribute('company', 'Bankist');
+console.log(logo.dataset.versionNumber);
+
+logo.classList.add();
+logo.classList.remove();
+logo.classList.toggle();
+logo.classList.contains('');
+logo.className = 'jonas';
