@@ -76,3 +76,14 @@ message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px';
 
 document.documentElement.style.setProperty('--color-primary', 'orangered');
+document
+  .querySelector('.operations__header')
+  .style.setProperty('font-size', '5rem');
+
+// Atributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.className);
+logo.alt = 'minimalist logo';
+logo.setAttribute('company', 'Bankist');
