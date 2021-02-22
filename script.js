@@ -32,65 +32,94 @@ document.addEventListener('keydown', function (e) {
 
 ////////////////////////////////////////////////////////
 // Selecting elements
-console.log(document.documentElement);
-console.log(document.head);
-console.log(document.body);
+// console.log(document.documentElement);
+// console.log(document.head);
+// console.log(document.body);
 
-const header = document.querySelector('.header');
-const allSections = document.querySelectorAll('.section');
-console.log(allSections);
+// const header = document.querySelector('.header');
+// const allSections = document.querySelectorAll('.section');
+// console.log(allSections);
 
-document.getElementById('section--1');
-const allButtons = document.getElementsByTagName('button');
-console.log(allButtons);
+// document.getElementById('section--1');
+// const allButtons = document.getElementsByTagName('button');
+// console.log(allButtons);
 
-document.getElementsByClassName('btn');
+// document.getElementsByClassName('btn');
 
-//Creating and inserting elements
+// //Creating and inserting elements
 
-const message = document.createElement('div');
-message.classList.add('cookie-message');
-// message.textContent =
-//   'We used cookies for improved functionality and analytics';
-message.innerHTML =
-  'We used cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
+// const message = document.createElement('div');
+// message.classList.add('cookie-message');
+// // message.textContent =
+// //   'We used cookies for improved functionality and analytics';
+// message.innerHTML =
+//   'We used cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
 
-header.append(message);
-// header.before(message);
-// header.after(message);
+// header.append(message);
+// // header.before(message);
+// // header.after(message);
 
-//Delete elements
-document.querySelector('.btn--close-cookie');
-addEventListener('click', () => message.remove());
+// //Delete elements
+// document.querySelector('.btn--close-cookie');
+// addEventListener('click', () => message.remove());
 
-//Styles
+// //Styles
 
-message.style.backgroundColor = '#37383d';
-message.style.width = '120%';
+// message.style.backgroundColor = '#37383d';
+// message.style.width = '120%';
 
-console.log(message.style.backgroundColor);
+// console.log(message.style.backgroundColor);
 
-console.log(getComputedStyle(message).height);
+// console.log(getComputedStyle(message).height);
 
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px';
+// message.style.height =
+//   Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px';
 
-document.documentElement.style.setProperty('--color-primary', 'orangered');
-document
-  .querySelector('.operations__header')
-  .style.setProperty('font-size', '5rem');
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
+// document
+//   .querySelector('.operations__header')
+//   .style.setProperty('font-size', '5rem');
 
-// Atributes
-const logo = document.querySelector('.nav__logo');
-console.log(logo.alt);
-console.log(logo.src);
-console.log(logo.className);
-logo.alt = 'minimalist logo';
-logo.setAttribute('company', 'Bankist');
-console.log(logo.dataset.versionNumber);
+// // Atributes
+// const logo = document.querySelector('.nav__logo');
+// console.log(logo.alt);
+// console.log(logo.src);
+// console.log(logo.className);
+// logo.alt = 'minimalist logo';
+// logo.setAttribute('company', 'Bankist');
+// console.log(logo.dataset.versionNumber);
 
-logo.classList.add();
-logo.classList.remove();
-logo.classList.toggle();
-logo.classList.contains('');
-logo.className = 'jonas';
+// logo.classList.add();
+// logo.classList.remove();
+// logo.classList.toggle();
+// logo.classList.contains('');
+// logo.className = 'jonas';
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('Current scroll (X/Y)', window.pageXOffset, pageYOffset);
+  console.log(
+    'height/width viewport',
+    document.documentElement.clientWidth,
+    document.documentElement.clientHeight
+  );
+
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
